@@ -49,13 +49,13 @@ SCROLL-HERO/
 
 
 ## Links
-Live : [https://your-live-project-link.com](https://uzer-itzfizz-assignment.vercel.app/)
+Live : [https://uzer-itzfizz-assignment.vercel.app/](https://uzer-itzfizz-assignment.vercel.app/)
 
-GitHub: [https://github.com/your-username](https://github.com/08Uzair/uzer-itzfizz-assignment.git)
+GitHub: [https://github.com/08Uzair/uzer-itzfizz-assignment.git](https://github.com/08Uzair/uzer-itzfizz-assignment.git)
 
-Resume: [https://your-resume-link.com](https://drive.google.com/file/d/1ag6CWb5J-AhujMYRaKrUnkdGPxjXsUDt/view?usp=sharing)
+Resume: [https://drive.google.com/file/d/1ag6CWb5J-AhujMYRaKrUnkdGPxjXsUDt/view?usp=sharing](https://drive.google.com/file/d/1ag6CWb5J-AhujMYRaKrUnkdGPxjXsUDt/view?usp=sharing)
 
-LinkedIn: [https://linkedin.com/in/your-profile](https://www.linkedin.com/in/uzairqureshi0803/)
+LinkedIn: [https://www.linkedin.com/in/uzairqureshi0803/](https://www.linkedin.com/in/uzairqureshi0803/)
 
 
 
