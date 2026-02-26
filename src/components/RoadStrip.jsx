@@ -1,3 +1,5 @@
+import { HERO_TITLE } from "../constants";
+
 const RoadStrip = ({ greenRef, carRef, car }) => {
   return (
     <div className="absolute top-1/2 -translate-y-1/2 w-full h-52 bg-[#1e1e1e] overflow-hidden">
@@ -8,7 +10,7 @@ const RoadStrip = ({ greenRef, carRef, car }) => {
       />
 
       <h1 className="absolute left-24 top-1/2 -translate-y-1/2 text-[120px] font-bold tracking-[10px] text-[#1e1e1e] z-10 whitespace-nowrap">
-        WELCOME ITZFIZZ
+        {HERO_TITLE}
       </h1>
 
       <img
