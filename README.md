@@ -1,16 +1,64 @@
-# React + Vite
+# Scroll-Driven Hero Section Animation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to Run the Project
 
-Currently, two official plugins are available:
+1. Install dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+npm install
+```
 
-## React Compiler
+2. Start development server
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+npm run dev
+```
 
-## Expanding the ESLint configuration
+3. Build for production
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+npm run build
+```
+
+---
+
+
+## Folder Structure
+
+```
+SCROLL-HERO/
+│
+├── public/                  Static assets
+│
+├── src/
+│   ├── assets/              Images and SVG files
+│   ├── components/          Reusable UI components (Hero, StatCard, RoadStrip)
+│   ├── hooks/               Custom animation hook (useHeroAnimation)
+│   ├── utility/             Helper functions for animation logic
+│   ├── constants/           Static data and configuration
+│   ├── App.jsx              Root component
+│   ├── main.jsx             Application entry point
+│   └── index.css            Global styles
+│
+├── index.html               Main HTML file
+├── package.json             Dependencies and scripts
+└── vite.config.js           Vite configuration
+```
+
+---
+
+
+## Links
+Live : [https://your-live-project-link.com](https://uzer-itzfizz-assignment.vercel.app/)
+
+GitHub: [https://github.com/your-username](https://github.com/08Uzair/uzer-itzfizz-assignment.git)
+
+Resume: [https://your-resume-link.com](https://drive.google.com/file/d/1ag6CWb5J-AhujMYRaKrUnkdGPxjXsUDt/view?usp=sharing)
+
+LinkedIn: [https://linkedin.com/in/your-profile](https://www.linkedin.com/in/uzairqureshi0803/)
+
+
+
+
+
+---
