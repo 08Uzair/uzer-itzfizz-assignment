@@ -12,72 +12,84 @@ const Hero = () => {
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 920) {
-        window.scrollTo(0, 920);
-      }
+    const img = carRef.current;
+
+    const initAnimation = () => {
+      const ctx = gsap.context(() => {
+        const containerWidth = 1790;
+        const carWidth = img.offsetWidth;
+
+        // Better and stable final position calculation
+        const finalX = containerWidth - carWidth - 40;
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: () => `+=${containerWidth}`,
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        // Green strip animation
+        tl.to(
+          greenRef.current,
+          {
+            width: "95%",
+            ease: "none",
+          },
+          0,
+        );
+
+        // Car movement
+        tl.to(
+          img,
+          {
+            x: finalX,
+            ease: "none",
+          },
+          0,
+        );
+
+        // Cards animation
+        tl.to(
+          cardsRef.current,
+          {
+            opacity: 1,
+            scale: 1,
+            ease: "power2.out",
+            stagger: 0.05,
+          },
+          0,
+        );
+
+        ScrollTrigger.refresh();
+      }, sectionRef);
+
+      return () => ctx.revert();
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (img.complete) {
+      initAnimation();
+    } else {
+      img.onload = initAnimation;
+    }
 
-    // Cleanup (VERY important)
+    // Refresh on resize (important for production)
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const carWidth = carRef.current.offsetWidth;
-      const screenWidth = window.innerWidth;
-
-      const finalX = screenWidth - carWidth / 8;
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: () => `+=${finalX}`,
-          scrub: true,
-          pin: true,
-          pinSpacing: false,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      tl.to(
-        greenRef.current,
-        {
-          width: "108%",
-          ease: "none",
-          duration: 1,
-        },
-        0,
-      );
-
-      tl.to(
-        carRef.current,
-        {
-          x: finalX,
-          ease: "none",
-          duration: 1,
-        },
-        0,
-      );
-
-      tl.to(
-        cardsRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          ease: "power2.out",
-          duration: 1,
-          stagger: 0.15,
-        },
-        0,
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
   }, []);
 
   return (
